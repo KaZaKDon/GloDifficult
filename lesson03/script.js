@@ -9,7 +9,7 @@ if (lang == "ru") {
 
 console.log(arr);
 
-var lang1 = "ru";
+const lang1 = "ru";
 let arr1;
 
 switch (true) {
@@ -32,3 +32,16 @@ let obj = {
 let arrObj = obj[langObj];
 
 console.log(arrObj);
+
+const namePerson = prompt("Введите Ваше имя:");
+
+switch (true) {
+  case namePerson == "Артем":
+    console.log("Директор");
+    break;
+  case namePerson == "Александр":
+    console.log("Преподователь");
+    break;
+  default:
+    console.log("Студент");
+}
