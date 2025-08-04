@@ -60,42 +60,19 @@ function getDateTime1() {
   let minute = now.getMinutes();
   let second = now.getSeconds();
 
-  if (hour.toString().length == 1) {
-    hour = "0" + hour;
-  }
-  if (minute.toString().length == 1) {
-    minute = "0" + minute;
-  }
-  if (second.toString().length == 1) {
-    second = "0" + second;
-  }
-  if (day.toString().length == 1) {
-    day = "0" + day;
-  }
-  if (month.toString().length == 1) {
-    month = "0" + month;
-  }
-  addendumNull(hour, minute, second, day);
+  hour = test(hour);
+  minute = test(minute);
+  second = test(second);
+  day = test(day);
+  month = test(month);
 
   let time1 = `${day} ${month} ${year}, ${hour}:${minute}:${second}`;
 
   document.getElementById("clock1").innerHTML = time1;
 }
 
-function addendumNull(hour, minute, second, day) {
-  if (day.toString().length == 1) {
-    day = "0" + day;
-  }
-  if (hour.toString().length == 1) {
-    hour = "0" + hour;
-  }
-  if (minute.toString().length == 1) {
-    minute = "0" + minute;
-  }
-  if (second.toString().length == 1) {
-    second = "0" + second;
-  }
-  return;
+function test(value) {
+  return value > 10 ? value : `0${value}`;
 }
 
 function startClock() {
@@ -112,13 +89,7 @@ function startClock1() {
 startClock();
 startClock1();
 
-/* if (month.toString().length == 1) {
-    month = "0" + month;
-  }
-  if (day.toString().length == 1) {
-    day = "0" + day;
-  }
-  if (hour.toString().length == 1) {
+/*if (hour.toString().length == 1) {
     hour = "0" + hour;
   }
   if (minute.toString().length == 1) {
@@ -127,15 +98,9 @@ startClock1();
   if (second.toString().length == 1) {
     second = "0" + second;
   }
-  var dateTime =
-    year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
-  return dateTime;
-}
-
-// example usage: realtime clock
-setInterval(function () {
-  currentTime = getDateTime();
-  document.getElementById("digital-clock").innerHTML = currentTime;
-}, 1000);
-
-setInterval();*/
+  if (day.toString().length == 1) {
+    day = "0" + day;
+  }
+  if (month.toString().length == 1) {
+    month = "0" + month;
+  }*/
